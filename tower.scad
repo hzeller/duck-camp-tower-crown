@@ -1,14 +1,16 @@
 $fn=96;
 epsilon=0.1;
 
+with_duck=true;
+
 crown_slide_from_top=40;  // how far the crown platform slides from the top
 crown_thick=15;           // thickness of the crown platform.
-crown_dia=120;            // Diameter of the crown platform
+crown_dia=with_duck ? 120 : 185; // Diameter of the crown platform
 
 pole_dia=25.4 + 2.5;      // Diameter of the poles. + wiggle-room
 
-platform_dia=870;         // diameter on the last ring in the tower
-pole_len=900;             // length of the poles originating from that ring.
+platform_dia=870;         // Diameter on the last ring in the tower
+pole_len=900;             // Length of the poles originating from that ring.
 
 // The poles meet somewhere, but not in one point, because they are real
 // objects with a real thickness ("pole_dia") :)
@@ -27,7 +29,8 @@ triangle_angle=acos(effective_r / pole_len);
 slant=effective_r / triangle_height;
 
 // The poles that meet at the top. There are 10 of them, based on a circle
-// with "platform_dia" diameter with poles of length "pole_len"
+// with "platform_dia" diameter with poles of length "pole_len" meeting at
+// the top with top_platform_dia
 module platform() {
     for (x=[0,1,2,3,4,5,6,7,8,9]) {
 	rotate([0, 0, x * 36])
@@ -40,7 +43,7 @@ module raw_crown() {
     // so that it is possible to see the duck from the ground.
     cylinder(r=crown_dia/2, r2=crown_dia/2 - slant * crown_thick,h=crown_thick);
 
-    scale(1.8) duck();
+    if (with_duck) scale(1.8) duck();
 }
 
 module crown() {
