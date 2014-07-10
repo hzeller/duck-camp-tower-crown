@@ -1,6 +1,6 @@
 Crown of Tower at Duck Camp 2014 @Toorcamp
 
-This uses [duck-stl][this duck from thingiverse] on top of our geometric tower.
+This uses [this duck from thingiverse][duck-stl] on top of our geometric tower.
 
 ![Tower crown][tower-crown]
 
