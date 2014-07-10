@@ -1,7 +1,7 @@
 $fn=96;
 epsilon=0.1;
 
-with_duck=true;
+with_duck=true;          // Show duck ? If not, then platform is pretty simple.
 
 crown_slide_from_top=40;  // how far the crown platform slides from the top
 crown_thick=15;           // thickness of the crown platform.
