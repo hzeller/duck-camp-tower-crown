@@ -1,8 +1,9 @@
 $fn=96;
+epsilon=0.1;
 
-crown_slide_from_top=30;  // how far the crown platform slides from the top
+crown_slide_from_top=40;  // how far the crown platform slides from the top
 crown_thick=15;           // thickness of the crown platform.
-crown_dia=100;            // Diameter of the crown platform
+crown_dia=120;            // Diameter of the crown platform
 
 pole_dia=25.4 + 2.5;      // Diameter of the poles. + wiggle-room
 
@@ -28,7 +29,7 @@ module platform() {
 }
 
 module raw_crown() {
-    cylinder(r=crown_dia, r2=crown_dia - slant * crown_thick,h=crown_thick);
+    cylinder(r=crown_dia/2, r2=crown_dia/2 - slant * crown_thick,h=crown_thick);
     scale(1.8) duck();
 }
 
