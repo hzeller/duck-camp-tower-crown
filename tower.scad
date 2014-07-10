@@ -10,11 +10,11 @@ platform_dia=870;         // diameter on the last ring in the tower
 pole_len=900;             // length of the poles originating from that ring.
 
 // The poles meet somewhere, but not in one point, because they are thick :)
-top_platform_dia=3.5 * pole_dia;
-pole_extra_space=5;       // We make the hole a little bit deeper
+top_platform_dia=3.5 * pole_dia;  // (visually inspect)
 
 //---- internal
 
+pole_extra_space=5;       // We make the hole a little bit deeper
 effective_r = (platform_dia - top_platform_dia)/2;
 triangle_height=sqrt((pole_len * pole_len) - (effective_r * effective_r));
 triangle_angle=acos(effective_r / pole_len);
